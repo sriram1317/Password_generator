@@ -11,7 +11,8 @@ passLen = int(input("How many letters would you like in your password?\n"))
 passSym = int(input("How many symbols would you like?\n"))
 passNum = int(input("How many num would you like?\n"))
 
-totLen = passLen + passSym + passNum
+# final passord string 
+password = ""
 
 #the lists from here we are going to take the charecters for the password
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -33,11 +34,12 @@ for i in range(0, passNum):
 for i in range(0, passSym):
     pass_gen.append(random.choice(sym))
 
-password = ""
+#shuffling the generated list to get random charecters at random indices
 random.shuffle(pass_gen)
 
+# turning shuffled list to string
 for i in pass_gen:
     password += i
 
-
+# printing the result
 print(f'your generated password is: {password}')
